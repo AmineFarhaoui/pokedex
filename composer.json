@@ -1,0 +1,15 @@
+{
+    "name": "amine/pokedex",
+    "autoload": {
+        "psr-4": {
+            "Amine\\Pokedex\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Amine",
+            "email": "aminefarhaoui05@gmail.com"
+        }
+    ],
+    "require": {}
+}
