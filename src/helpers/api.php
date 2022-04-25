@@ -22,7 +22,7 @@ if (count($_GET) > 0) {
 
     if(isset($_GET['session'])) {
         if($_GET['session'] == '0') {
-            if(isset($_SESSION['username']))
+            if(isset($_SESSION['user']))
                 echo(json_encode(true));
             else { 
                 echo(json_encode(false));

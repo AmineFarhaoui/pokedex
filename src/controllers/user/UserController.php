@@ -33,7 +33,7 @@ class UserController
             return false;
         }
 
-        $_SESSION['username'] = $row;
+        $_SESSION['user'] = $row;
         return true;
 
     }

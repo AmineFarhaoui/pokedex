@@ -39,14 +39,15 @@ if(isset($_GET['action']) && $_GET['action'] == 'logout') {
                     <a class="hover:text-yellow-200" href="index.php"><h1 class="text-2xl">Pokedex</h1></a>
 
                     <!-- Show add pokemon button if user is logged in -->
-                    <?php if (isset($_SESSION['username'])) { ?>
+                    <?php if (isset($_SESSION['user'])) { ?>
                     <a class="hover:text-yellow-200" href="addPokemon.php">Add pokemon</a>
                     <?php } ?>
 
                 </div>
                 <!-- show signout button if user is logged in. Else show login -->
-                <?php if (isset($_SESSION['username'])) { ?>
+                <?php if (isset($_SESSION['user'])) { ?>
                 <div class="flex w-full justify-end items-center space-x-5">
+                    <a> Hello <?php echo ucwords($_SESSION['user']['name']) ?></a>
                     <a class="px-4 py-2 rounded bg-gradient-to-t from-mintblue to-mintbluelight" href="index.php?action=logout">Signout</a>
                 </div>
                 <?php } else { ?>
