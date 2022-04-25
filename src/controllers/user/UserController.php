@@ -24,16 +24,16 @@ class UserController
     */
     public function login($userName, $password)
     {
-        $query = "SELECT * FROM users WHERE username = '$userName' AND password = '$password'";
-        $result = $this->conn->query($query);
-        $singlerow = mysqli_fetch_row($result);
+        $sql = "SELECT * FROM users WHERE username = '$userName' AND password = '$password'";
+        $result = $this->conn->query($sql);
+        $row = $result->fetch_assoc();
 
         if(!$result-> num_rows > 0)
         {
             return false;
         }
 
-        $_SESSION['username'] = $singlerow[1];
+        $_SESSION['username'] = $row;
         return true;
 
     }

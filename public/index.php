@@ -11,7 +11,7 @@ require 'inc/head.php';
 ?>
     <div class="flex flex-col w-full px-20 py-3 max-w-screen-xl">
         <div class="flex justify-center w-full">
-            <div class="flex justify-center">
+            <div class="flex flex-wrap justify-center">
                 <button class="type-button mx-2 hover:text-yellow-200" value=""> All </button> -
                 <button class="type-button mx-2 hover:text-yellow-200" value="Normal"> Normal </button> -
                 <button class="type-button mx-2 hover:text-yellow-200" value="Fire"> Fire </button> -

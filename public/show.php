@@ -24,7 +24,7 @@ if(isset($_GET['action']) && $_GET['action'] == "update") {
 
 // Call delete method from PokemonController
 if(isset($_GET['action']) && $_GET['action'] == 'delete'){
-    if (!$controller->destroy($_GET['id'])) {
+    if (!$controller->destroy($_POST['id'])) {
         echo 'Something went wrong.';
     } else {
         echo "Pokemon has been deleted.";
@@ -34,8 +34,9 @@ if(isset($_GET['action']) && $_GET['action'] == 'delete'){
     <div class="flex flex-col w-full px-20 py-3 max-w-screen-xl">
         <section class="flex flex-wrap justify-around w-full mt-20">
             <div class=" w-full">
-                <form action="?action=delete&id=<?php echo $pokemon['id']?>" method="post">
-                    <input type="submit" value="Delete" onclick="alertDelete()" class="delete-button text-red-700 bg-transparent cursor-pointer hover:text-red-500">
+                <form action="" method="post">
+                    <input type="hidden" name="id" value="<?php echo $pokemon['id'] ?>">
+                    <input type="button" value="Delete" class="delete-button text-red-700 bg-transparent cursor-pointer hover:text-red-500">
                 </form>
                 <form action="?pokemon=<?php echo $pokemon['id'] . "&action=update"?>" method="post" enctype="multipart/form-data">
                     <div class="flex flex-col">

@@ -2,9 +2,25 @@ $(document).ready(function(){
     var type;
     var userState;
 
-    // alert user when delete button is clicked
-    $('.delete-button').click(function() {
-        alert("Are you sure you want to delete this item?");
+    // remove pokemon from database
+    $(".delete-button").click(function(){
+        if(confirm('Are you sure to remove this record ?'))
+        {
+            $.ajax({
+               url: 'show.php?action=delete',
+               type: 'POST',
+               data: {
+                     id: $("input[name=id]").val()
+                },
+               error: function() {
+                  alert('Something is wrong');
+               },
+               success: function() {
+                    window.location.replace("index.php");
+                    alert("Record removed successfully");  
+               }
+            });
+        }
     });
 
     // change pokemon type shown when clicking on a type
